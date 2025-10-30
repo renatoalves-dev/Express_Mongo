@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Todos os Clientes</h1>
+ <div class="container-fluid">
+   <table  class="table  table-dark table-striped table-hover">
+<thead>
+    <tr>
+      <th scope="col">id: </th>
+      <th scope="col">firstName:</th>
+      <th scope="col">lastName:</th>
+      <th scope="col">Email:</th>
+      <th scope="col">Password:</th>
+      <th scope="col">Receber Promoções:</th>
+      
+    </tr>
+  </thead>
+     
+
+  
+     {{#each listarTodos}}
+      <tbody>
+    <tr>
+        <th scope="row">{{this.id}}</th>
+        <th scope="row">{{this.firstName}}</th>
+        <th scope="row">{{this.lastName}}</th>
+        <th scope="row">{{this.email}}</th>
+        <th scope="row">{{this.password}} </th>
+         <th scope="row">{{this.myCheckbox}} <br><br> <button  type="button" onclick="alert('Deseja Excluir registro?')" class="btn btn-warning"><a href="/usuariosDel/{{this.id}}"><i class="bi bi-trash"></i>Excluir</a></button> | <button  type="button"  class="btn btn-info"><a href="/users/{{this.id}}"><i class="bi bi-pen"></i>Atualizar</a></button></th>
+                
+    </tr>  
+      </tbody> 
+       {{/each}}    
+      
+    </table>
+  </div> 
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>    
+</body> 
+</html>
